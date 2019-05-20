@@ -5,7 +5,7 @@ package com.xw.dynamicprogramming;
  * 问题描述：小偷背包容量为W，商品i的价值Vi，重量Wi，如何带走价值最高的物品集
  * 商品只有拿与不拿
  */
-public class knapsack01 {
+public class Knapsack01 {
 
     private static int[] W = {2,6,9,10};
     private static int[] V = {4,1,2,3};
