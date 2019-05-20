@@ -28,7 +28,7 @@ public class Knapsack01 {
         return a;
     }
 
-    private static void printa(int[][] a){
+    public static void printa(int[][] a){
         for(int i = 0; i < a.length ; i++){
             for(int j = 0;j < a[0].length ;j++){
                 System.out.print(a[i][j] + " ");
