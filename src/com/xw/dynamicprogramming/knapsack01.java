@@ -7,8 +7,8 @@ package com.xw.dynamicprogramming;
  */
 public class knapsack01 {
 
-    private static int[] W = {0,2,3,4,5};
-    private static int[] V = {0,3,4,5,6};
+    private static int[] W = {2,6,9,10};
+    private static int[] V = {4,1,2,3};
 
     /**
      * 递归式i为物品 j为当前背包剩余容量
@@ -17,11 +17,11 @@ public class knapsack01 {
      */
     public static int[][] sovle(int[] W,int[] V,int bagW){
         int n = W.length;
-        int[][] a = new int[n][bagW+1];
-        for(int i = 1 ; i < n ; i++){
-            for(int j = 1 ; j <= bagW ; j++){
-                if(W[i] > j) a[i][j] = a[i-1][j];
-                if(W[i] <= j) a[i][j] = a[i-1][j-W[i]] + V[i];
+        int[][] a = new int[n+1][bagW+1];
+        for(int i = 1; i<= n ; i++){
+            for(int j = 1; j <= bagW ;j++){
+                if(W[i-1] > j) a[i][j] = a[i-1][j];
+                if(W[i-1] <= j) a[i][j] = Math.max(a[i-1][j],a[i-1][j-W[i-1]] + V[i-1]);
                 printa(a);
             }
         }
